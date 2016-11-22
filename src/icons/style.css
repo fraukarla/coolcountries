@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?14mbr8');
-  src:  url('fonts/icomoon.eot?14mbr8#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?14mbr8') format('truetype'),
-    url('fonts/icomoon.woff?14mbr8') format('woff'),
-    url('fonts/icomoon.svg?14mbr8#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?s5no2v');
+  src:  url('fonts/icomoon.eot?s5no2v#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?s5no2v') format('truetype'),
+    url('fonts/icomoon.woff?s5no2v') format('woff'),
+    url('fonts/icomoon.svg?s5no2v#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +48,9 @@
 .icon-av_timer:before {
   content: "\e01b";
 }
+.icon-error:before {
+  content: "\e000";
+}
 .icon-my_location:before {
   content: "\e55c";
 }
@@ -75,16 +78,7 @@
 .icon-arrow-up:before {
   content: "\e904";
 }
-.icon-dollar:before {
-  content: "\e905";
-}
-.icon-bill:before {
-  content: "\e905";
-}
 .icon-money:before {
-  content: "\e905";
-}
-.icon-stack:before {
   content: "\e905";
 }
 .icon-back-in-time:before {

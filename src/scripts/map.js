@@ -1,25 +1,33 @@
 // Not using requirejs to load this module because google maps api is already loaded async
 
 function initMap() {
-	var lat = parseInt(getUrlVars()['lat'])
-	var lng = parseInt(getUrlVars()['lng'])
+	var lat = getUrlVars()['lat']
+	var lng = getUrlVars()['lng']
 
-  var map = new google.maps.Map(document.getElementById('map-container'), {
-    center: {
-			lat: lat,
-			lng: lng
-		},
-    zoom: 4
-  });
+	if (lat !== 'undefined' && lng !== 'undefined') {
+		drawMap(lat, lng);
+	} else {
+		document.getElementById('map-container').style.display = 'none';
+	}
+}
 
-	var marker = new google.maps.Marker({
-    position: {
-			lat: lat,
-			lng: lng
-		},
-    map: map,
-    title: 'Hello World!'
-  });
+function drawMap(lat, lng) {
+	  var map = new google.maps.Map(document.getElementById('map-container'), {
+	    center: {
+				lat: parseInt(lat),
+				lng: parseInt(lng)
+			},
+	    zoom: 4
+	  });
+
+		var marker = new google.maps.Marker({
+	    position: {
+				lat: parseInt(lat),
+				lng: parseInt(lng)
+			},
+	    map: map,
+	    title: 'Hello World!'
+	  });
 }
 
 function getUrlVars () {

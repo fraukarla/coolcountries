@@ -1,20 +1,8 @@
-<a class="details-back-link" href="index.html">Back to list</a>
+{{> country-details }}
 
-<div data-role="country-details">
-	<h1 data-role="country-name"><!-- filled by javascript --></h1>
+{{> map }}
 
-	<table data-role="country-details-table">
-		<tbody>
-			<tr class="region"><td>Region</td><td data-role="country-region"><!-- filled by javascript --></td></tr>
-			<tr class="capital"><td>Capital</td><td data-role="country-capital"><!-- filled by javascript --></td></tr>
-			<tr class="population"><td>Population</td><td data-role="country-population"><!-- filled by javascript --></td></tr>
-			<tr class="currencies"><td>Currencies</td><td data-role="country-currencies"><!-- filled by javascript --></td></tr>
-			<tr class="timezones"><td>Timezones</td><td data-role="country-timezones"><!-- filled by javascript --></td></tr>
-		</tbody>
-	</table>
-</div>
-
-<div id="map-container"><!-- filled by javascript --></div>
-
-<script src="scripts/map.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClKqV2YtVG-jxWTx6BzXn1MmZJM9ptj30&callback=initMap"></script>
+<section class="page-options">
+	<a class="back-link" href="index.html">Back to list</a>
+	<a class="report-link" href="report.html">Report an error</a>
+</section>

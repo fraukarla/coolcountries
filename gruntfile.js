@@ -71,7 +71,8 @@ module.exports = function(grunt) {
 							expand: true
 						},
 						{
-							src: ['src/images'],
+							cwd: 'src/images',
+							src: ['**/*'],
 							dest: 'build/images',
 							expand: true,
 							flatten: true
@@ -94,7 +95,7 @@ module.exports = function(grunt) {
 	      options: {
 	        port: 9001,
 	        base: 'build',
-		      open: true,
+		      // open: true,
 					hostname: 'localhost',
 					livereload: 35729 // default grunt-contrib-watch livereload port
 	      }

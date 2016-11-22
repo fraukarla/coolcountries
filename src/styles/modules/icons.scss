@@ -19,10 +19,7 @@ $icon-codes: (
     arrow-left: '\e902',
     arrow-down: '\e903',
     arrow-up: '\e904',
-    dollar: '\e905',
-    bill: '\e905',
     money: '\e905',
-    stack: '\e905',
     back-in-time: '\e906',
     cross: '\e917',
     location-pin: '\e91c',
@@ -34,7 +31,8 @@ $icon-codes: (
     plus: '\e924',
     facebook-with-circle: '\e927',
     google-with-circle: '\e928',
-    twitter-with-circle: '\e92a'
+    twitter-with-circle: '\e92a',
+	error: '\e000'
 );
 
 // load font files

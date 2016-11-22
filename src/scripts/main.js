@@ -6,12 +6,12 @@ define(function( require ) {
 
 	require('scripts/modules/country-list')
 	require('scripts/modules/country-details')
-	// require('scripts/modules/map');
+	require('scripts/modules/report-form')
 
 	var init = function($el) {
 		$el.find('[data-role="country-list"]').CountryList()
 		$el.find('[data-role="country-details"]').CountryDetails()
-		// $el.find('[data-role="map"]').Map();
+		$el.find('[data-role="report-form"]').ReportForm()
 	}
 
 	// initialize all modules which exist on dom ready

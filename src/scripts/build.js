@@ -10,6 +10,7 @@ requirejs.config({
     'jquery': 'scripts/lib/jquery.min',
     'startswith': 'scripts/utils/startswith',
     'getUrlVars': 'scripts/utils/getUrlVars',
+		'sortElements': 'scripts/utils/jquery.sortElements',
 		'numberformatter': 'scripts/utils/numberformatter'
   }
 });

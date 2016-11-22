@@ -1,4 +1,4 @@
-define(['jquery', 'startswith', 'numberformatter'], function($) {
+define(['jquery', 'startswith', 'numberformatter', 'sortElements'], function($) {
 
 	function CountryList($el, params) {
 		"use strict";
@@ -39,7 +39,14 @@ define(['jquery', 'startswith', 'numberformatter'], function($) {
 				var countryPositionLat = data[i].latlng[0] // for link only
 				var countryPositionLng = data[i].latlng[1] // for link only
 
-				countryList += '<tr data-country-code="' + countryCode + '" data-lat="' + countryPositionLat + '" data-lng="' + countryPositionLng + '"><td>' + countryName + '</td><td>' + countryPopulation + '</td></tr>'
+				var countryListItem = '<tr data-country-code="' + countryCode + '"'
+
+				countryListItem += ' data-lat="' + countryPositionLat + '" data-lng="' + countryPositionLng + '"'
+
+				countryListItem += '><td><span data-role="value">' + countryName + '</span></td>'
+				countryListItem += '<td><span data-role="value">' + countryPopulation + '</span></td></tr>'
+
+				countryList += countryListItem;
 			}
 
 			$el.find('tbody').html(countryList)
@@ -56,6 +63,8 @@ define(['jquery', 'startswith', 'numberformatter'], function($) {
 			 var $filterInput = $el.find('[data-role="country-list-filter"]')
 			 var $countryList = $el.find('tbody');
 
+			 $filterInput.val('');
+
 			 $filterInput.keyup(function(e) {
 				 var value = $(this).val();
 
@@ -66,11 +75,9 @@ define(['jquery', 'startswith', 'numberformatter'], function($) {
 
 				 // hide all items that don't start with the term in the input
 				 $countryList.children().each(function() {
-					 // startsWith not supported in all browsers yet
-					 console.log(value)
-					 console.log($(this).children().first().html())
+					 // using polyfill, startsWith not supported in all browsers yet
 					 // adding support fot lowercase inputs
-					 if (!$(this).children().first().html().startsWith(value) && !$(this).children().first().html().toLowerCase().startsWith(value)) {
+					 if (!$(this).children().first().find('[data-role="value"]').html().startsWith(value) && !$(this).children().first().find('[data-role="value"]').html().toLowerCase().startsWith(value)) {
 						 $(this).hide()
 					 }
 				 })
@@ -81,17 +88,34 @@ define(['jquery', 'startswith', 'numberformatter'], function($) {
 		 * Initialize country list functions
 		 */
 		 var initCountryListSorting = function($el) {
-			 $el.find('th [data-role="country-sort"]').each(function() {
+			 $el.find('[data-role="sort-table"]').each(function() {
 				 $(this).click(function() {
 					 	// sort table
 					 	var index = $(this).closest('th').index()
-						var inverse = false
-						if ($(this).data('sort-order') === 'desc') {
-							inverse = true
-						}
-						sortTable($el.find('table'), index, inverse)
 
-						// mark active sorting
+						if (index === 0) {
+							var sortText = true;
+						} else {
+							var sortText = false;
+						}
+
+						var inverse = false
+
+						// if sorting is already active, reverse
+						if ($(this).hasClass('sort-active')) {
+							if (!$(this).hasClass('sort-desc')) {
+								inverse = true
+								$(this).addClass('sort-desc')
+							} else {
+								$(this).removeClass('sort-desc')
+							}
+						} else {
+							$(this).closest('tr').find('.sort-active').removeClass('sort-active')
+							$(this).addClass('sort-active')
+							$(this).removeClass('sort-desc')
+						}
+
+						sortTable($el.find('table'), index, inverse, sortText)
 					})
         })
 		 }
@@ -99,8 +123,29 @@ define(['jquery', 'startswith', 'numberformatter'], function($) {
 		/**
 		* Sort table
 		*/
-		var sortTable = function($table, index, inverse) {
+		var sortTable = function($table, index, inverse, sortText) {
+				$table.find('td').filter(function(){
+        	return $(this).index() === index;
+        }).sortElements(function(a, b){
+					if (sortText) {
+						a = $.text([a]);
+						b = $.text([b]);
+					} else {
+						a = parseInt($.text([a]).split('.').join(''));
+						b = parseInt($.text([b]).split('.').join(''));
+					}
 
+          if (a === b) {
+          	return 0;
+					}
+					if (a > b) {
+						return inverse ? -1 : 1
+					} else {
+						return inverse ? 1 : -1;
+					}
+        }, function() {
+            return this.parentNode;
+				});
 		}
 
 		/**

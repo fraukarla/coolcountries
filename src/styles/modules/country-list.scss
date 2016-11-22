@@ -1,15 +1,98 @@
 .country-list {
-	.sort {
-		@include icon('arrow-down');
 
-		cursor: pointer;
+	&-filter {
+		@include icon('search');
 
-		&-active {
-			color: $color-primary;
+		position: relative;
+		margin-bottom: 30px;
+
+		&:before {
+			position: absolute;
+		    left: 12px;
+		    top: 5px;
+		    font-size: 150%;
 		}
 
-		&-asc:before {
-			content: map-get($icon-codes, 'arrow-up');
+		input {
+    		padding-left: 2.5em;
+		}
+	}
+
+	table {
+	    width: 100%;
+	    table-layout: fixed;
+	}
+
+	th {
+		padding-bottom: 15px;
+	}
+
+	th:first-child,
+	td:first-child {
+		text-align: left;
+	}
+
+	th:last-child,
+	td:last-child {
+		text-align: right;
+	}
+
+	.sort {
+		cursor: pointer;
+		color: $primary-color;
+		font-weight: bold;
+		white-space: nowrap;
+	}
+
+	.sort-active {
+		@include icon('arrow-up', 'after');
+
+		position: relative;
+    	padding-right: 1.2em;
+
+		&:after {
+			color: $text-color;
+			margin: 0;
+		    font-size: 1.8em;
+		    position: absolute;
+		    right: -0.3em;
+		    top: -0.35em;
+		}
+
+		&.sort-desc:after {
+			content: map-get($icon-codes, 'arrow-down');
+    		top: -0.37em;
+		}
+	}
+
+	td {
+		padding-bottom: $gutter;
+
+		span {
+			font-weight: bold;
+		    display: block;
+		    padding: $gutter;
+			background: $light-grey-fonds;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+
+	tbody tr:hover {
+		cursor: pointer;
+
+		span {
+			background: $primary-color;
+			color: white;
+		}
+	}
+
+	// COUNTRY name
+	td:first-child {
+		span {
+			padding-right: 0;
+			color: $primary-color;
 		}
 	}
 }

@@ -1,0 +1,21 @@
+.page-options {
+	margin-bottom: $gutter;
+	
+	.back-link {
+		@include icon('arrow-left');
+
+		float: left;
+	}
+
+	.report-link {
+		@include icon('error');
+
+		float: right;
+	}
+
+	&:after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+}

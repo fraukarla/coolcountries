@@ -1,12 +1,19 @@
+// RESET
+@import 'lib/reset';
+
 // BASE STYLES
 @import 'base';
 
 // MODULES
 @import 'modules/icons';
+@import 'modules/forms';
 @import 'modules/header';
 @import 'modules/country-list';
 @import 'modules/country-details';
 @import 'modules/map';
+@import 'modules/page-options';
+@import 'modules/report-form';
 
 // PAGES
-@import 'pages/details'
+@import 'pages/index';
+@import 'pages/details';

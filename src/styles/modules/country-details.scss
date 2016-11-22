@@ -1,0 +1,78 @@
+.country-details {
+
+	.share-links {
+	    text-align: right;
+	    margin-bottom: -5px;
+
+		a {
+			@include icon('facebook-with-circle');
+
+			color: $light-text-color;
+
+			&:before {
+    			font-size: 1.3em;
+			}
+
+			&:hover {
+				color: $primary-color;
+			}
+		}
+
+		a.twitter:before {
+			content: map-get($icon-codes, 'twitter-with-circle')
+		}
+
+		a.google-plus:before {
+			content: map-get($icon-codes, 'google-with-circle')
+		}
+	}
+
+	table {
+		width: 100%;
+		margin-bottom: $gutter;
+		clear: right;
+	}
+
+	tr:nth-child(2n-1) {
+		background: $light-grey-fonds;
+	}
+
+	td {
+		padding: $gutter / 2;
+	}
+
+	td:first-child {
+		@include icon('room');
+
+		position: relative;
+    	padding-left: calc(20px + 2em);
+		font-weight: bold;
+
+		&:before {
+			position: absolute;
+		    left: $gutter;
+		    font-size: 1.2em;
+    		top: 0.4em;
+		}
+	}
+
+	.capital td:first-child:before {
+		content: map-get($icon-codes, 'location_city');
+	}
+
+	.population td:first-child:before {
+		content: map-get($icon-codes, 'people');
+	}
+
+	.currencies td:first-child:before {
+		content: map-get($icon-codes, 'money');
+	}
+
+	.timezones td:first-child:before {
+		content: map-get($icon-codes, 'schedule');
+	}
+
+	.new-entry {
+		display: block; // break after each entry, change to comma... if prefered
+	}
+}
