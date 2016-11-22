@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?14mbr8');
+  src:  url('fonts/icomoon.eot?14mbr8#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?14mbr8') format('truetype'),
+    url('fonts/icomoon.woff?14mbr8') format('woff'),
+    url('fonts/icomoon.svg?14mbr8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-schedule:before {
+  content: "\e8b5";
+}
+.icon-account_balance:before {
+  content: "\e84f";
+}
+.icon-arrow_back:before {
+  content: "\e5c4";
+}
+.icon-arrow_downward:before {
+  content: "\e5db";
+}
+.icon-arrow_forward:before {
+  content: "\e5c8";
+}
+.icon-arrow_upward:before {
+  content: "\e5d8";
+}
+.icon-attach_money:before {
+  content: "\e227";
+}
+.icon-av_timer:before {
+  content: "\e01b";
+}
+.icon-my_location:before {
+  content: "\e55c";
+}
+.icon-location_city:before {
+  content: "\e7f1";
+}
+.icon-room:before {
+  content: "\e8b4";
+}
+.icon-search:before {
+  content: "\e8b6";
+}
+.icon-people:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-arrow-left:before {
+  content: "\e902";
+}
+.icon-arrow-down:before {
+  content: "\e903";
+}
+.icon-arrow-up:before {
+  content: "\e904";
+}
+.icon-dollar:before {
+  content: "\e905";
+}
+.icon-bill:before {
+  content: "\e905";
+}
+.icon-money:before {
+  content: "\e905";
+}
+.icon-stack:before {
+  content: "\e905";
+}
+.icon-back-in-time:before {
+  content: "\e906";
+}
+.icon-cross:before {
+  content: "\e917";
+}
+.icon-location-pin:before {
+  content: "\e91c";
+}
+.icon-location:before {
+  content: "\e907";
+}
+.icon-mail:before {
+  content: "\e91e";
+}
+.icon-map:before {
+  content: "\e908";
+}
+.icon-menu:before {
+  content: "\e91f";
+}
+.icon-minus:before {
+  content: "\e920";
+}
+.icon-plus:before {
+  content: "\e924";
+}
+.icon-facebook-with-circle:before {
+  content: "\e927";
+}
+.icon-google-with-circle:before {
+  content: "\e928";
+}
+.icon-twitter-with-circle:before {
+  content: "\e92a";
+}
+

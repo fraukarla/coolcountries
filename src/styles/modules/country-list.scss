@@ -1,0 +1,15 @@
+.country-list {
+	.sort {
+		@include icon('arrow-down');
+
+		cursor: pointer;
+
+		&-active {
+			color: $color-primary;
+		}
+
+		&-asc:before {
+			content: map-get($icon-codes, 'arrow-up');
+		}
+	}
+}

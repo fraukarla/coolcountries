@@ -1,0 +1,94 @@
+$icon-margin: 0.3em;
+
+// update everytime icon font is changed
+$icon-codes: (
+    schedule: '\e8b5',
+    account_balance: '\e84f',
+    arrow_back: '\e5c4',
+    arrow_downward: '\e5db',
+    arrow_forward: '\e5c8',
+    arrow_upward: '\e5d8',
+    attach_money: '\e227',
+    av_timer: '\e01b',
+    my_location: '\e55c',
+    location_city: '\e7f1',
+    room: '\e8b4',
+    search: '\e8b6',
+    people: '\e900',
+    arrow-right: '\e901',
+    arrow-left: '\e902',
+    arrow-down: '\e903',
+    arrow-up: '\e904',
+    dollar: '\e905',
+    bill: '\e905',
+    money: '\e905',
+    stack: '\e905',
+    back-in-time: '\e906',
+    cross: '\e917',
+    location-pin: '\e91c',
+    location: '\e907',
+    mail: '\e91e',
+    map: '\e908',
+    menu: '\e91f',
+    minus: '\e920',
+    plus: '\e924',
+    facebook-with-circle: '\e927',
+    google-with-circle: '\e928',
+    twitter-with-circle: '\e92a'
+);
+
+// load font files
+@font-face {
+	font-family: 'icons';
+	src:  url('fonts/icomoon.eot?14mbr8');
+	src:  url('fonts/icomoon.eot?14mbr8#iefix') format('embedded-opentype'),
+	url('fonts/icomoon.ttf?14mbr8') format('truetype'),
+	url('fonts/icomoon.woff?14mbr8') format('woff'),
+	url('fonts/icomoon.svg?14mbr8#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// basic styles for our iconfont
+@mixin icon-base-styles() {
+    font-family: 'icons';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// create global styles for icons
+// .icon,
+// [class^='icon-']:before,
+// [class*=' icon-']:before {
+//     @include icon-base-styles();
+//     margin-right: $icon-margin;
+// }
+
+// create classes for all icons
+// @each $name, $value in $icon-codes {
+//     .icon-#{$name}:before {
+//         content: $value;
+//     }
+// }
+
+// mixin adding an icon to a custom class
+@mixin icon($icon, $position: 'before', $margin: true) {
+    &:#{$position} {
+        @include icon-base-styles();
+        content: map-get($icon-codes, $icon);
+
+        @if ($margin) {
+            @if ($position == 'after') {
+                margin-left: $icon-margin;
+            } @else {
+                margin-right: $icon-margin;
+            }
+        }
+    }
+}
