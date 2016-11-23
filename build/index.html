@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cool countries</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+      <header>
+      	<h1><img src="images/logo.svg" title="cool countries" alt="cool countries"/></h1>
+      	<p>Everything you'll ever need to know on countries.</p>
+      </header>
+
+<section class="country-list" data-role="country-list">
+	<div class="country-list-filter">
+		<input type="text" data-role="country-list-filter" placeholder="Search countries">
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<span class="sort sort-active" data-role="sort-table">Country Name</span>
+				</th>
+				<th>
+					<span class="sort" data-role="sort-table">Population</span>
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<!-- filled by javascript -->
+		</tbody>
+	</table>
+</section>
+
+
+	  <script data-main="scripts/build" src="scripts/lib/require.js"></script>
+  </body>
+</html>

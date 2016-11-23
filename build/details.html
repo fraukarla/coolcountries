@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cool countries</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+      <div class="share-links" data-role="share-links">
+      	<a class="facebook" href="#" title="Share on Facebook"></a></li>
+      	<a class="twitter" href="#" title="Share on Twitter"></a></li>
+      	<a class="google-plus" href="#" title="Share on Google Plus"></a></li>
+      </div>
+
+<section class="country-details" data-role="country-details">
+
+	<h1 data-role="country-name"><!-- filled by javascript --></h1>
+
+	<table data-role="country-details-table">
+		<tbody>
+			<tr class="region"><td>Region</td><td data-role="country-region"><!-- filled by javascript --></td></tr>
+			<tr class="capital"><td>Capital</td><td data-role="country-capital"><!-- filled by javascript --></td></tr>
+			<tr class="population"><td>Population</td><td data-role="country-population"><!-- filled by javascript --></td></tr>
+			<tr class="currencies"><td>Currencies</td><td data-role="country-currencies"><!-- filled by javascript --></td></tr>
+			<tr class="timezones"><td>Timezones</td><td data-role="country-timezones"><!-- filled by javascript --></td></tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="map-container" id="map-container"><!-- filled by javascript --></section>
+
+<script src="scripts/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClKqV2YtVG-jxWTx6BzXn1MmZJM9ptj30&callback=initMap"></script>
+
+<section class="page-options">
+	<a class="back-link" href="index.html">Back to list</a>
+	<a class="report-link" href="report.html">Report an error</a>
+</section>
+
+
+	  <script data-main="scripts/build" src="scripts/lib/require.js"></script>
+  </body>
+</html>
