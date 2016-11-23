@@ -1,5 +1,11 @@
 .country-list {
 
+	min-height: 300px;
+
+	&.is-loading {
+		background: url(../images/loading-spinner.svg) no-repeat center center;
+	}
+
 	&-filter {
 		@include icon('search');
 

@@ -4,6 +4,8 @@
 define(function( require ) {
 	'use strict';
 
+	require('jquery')
+
 	require('scripts/modules/country-list')
 	require('scripts/modules/country-details')
 	require('scripts/modules/report-form')

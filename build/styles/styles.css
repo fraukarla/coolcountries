@@ -139,87 +139,91 @@ header {
     padding: 0 40px;
     font-size: 1.2em; }
 
-.country-list-filter {
-  position: relative;
-  margin-bottom: 30px; }
-  .country-list-filter:before {
-    font-family: 'icons';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    display: inline-block;
-    font-variant: normal;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "";
-    margin-right: 0.3em; }
-  .country-list-filter:before {
-    position: absolute;
-    left: 12px;
-    top: 5px;
-    font-size: 150%; }
-  .country-list-filter input {
-    padding-left: 2.5em; }
-.country-list table {
-  width: 100%;
-  table-layout: fixed; }
-.country-list th {
-  padding-bottom: 15px; }
-.country-list th:first-child,
-.country-list td:first-child {
-  text-align: left; }
-.country-list th:last-child,
-.country-list td:last-child {
-  text-align: right; }
-.country-list .sort {
-  cursor: pointer;
-  color: #d42836;
-  font-weight: bold;
-  white-space: nowrap; }
-.country-list .sort-active {
-  position: relative;
-  padding-right: 1.2em; }
-  .country-list .sort-active:after {
-    font-family: 'icons';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    display: inline-block;
-    font-variant: normal;
-    text-transform: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "";
-    margin-left: 0.3em; }
-  .country-list .sort-active:after {
-    color: #666666;
-    margin: 0;
-    font-size: 1.8em;
-    position: absolute;
-    right: -0.3em;
-    top: -0.35em; }
-  .country-list .sort-active.sort-desc:after {
-    content: "";
-    top: -0.37em; }
-.country-list td {
-  padding-bottom: 20px; }
-  .country-list td span {
+.country-list {
+  min-height: 300px; }
+  .country-list.is-loading {
+    background: url(../images/loading-spinner.svg) no-repeat center center; }
+  .country-list-filter {
+    position: relative;
+    margin-bottom: 30px; }
+    .country-list-filter:before {
+      font-family: 'icons';
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      margin-right: 0.3em; }
+    .country-list-filter:before {
+      position: absolute;
+      left: 12px;
+      top: 5px;
+      font-size: 150%; }
+    .country-list-filter input {
+      padding-left: 2.5em; }
+  .country-list table {
+    width: 100%;
+    table-layout: fixed; }
+  .country-list th {
+    padding-bottom: 15px; }
+  .country-list th:first-child,
+  .country-list td:first-child {
+    text-align: left; }
+  .country-list th:last-child,
+  .country-list td:last-child {
+    text-align: right; }
+  .country-list .sort {
+    cursor: pointer;
+    color: #d42836;
     font-weight: bold;
-    display: block;
-    padding: 20px;
-    background: #e8edeb;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
-.country-list tbody tr:hover {
-  cursor: pointer; }
-  .country-list tbody tr:hover span {
-    background: #d42836;
-    color: white; }
-.country-list td:first-child span {
-  padding-right: 0;
-  color: #d42836; }
+    white-space: nowrap; }
+  .country-list .sort-active {
+    position: relative;
+    padding-right: 1.2em; }
+    .country-list .sort-active:after {
+      font-family: 'icons';
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "";
+      margin-left: 0.3em; }
+    .country-list .sort-active:after {
+      color: #666666;
+      margin: 0;
+      font-size: 1.8em;
+      position: absolute;
+      right: -0.3em;
+      top: -0.35em; }
+    .country-list .sort-active.sort-desc:after {
+      content: "";
+      top: -0.37em; }
+  .country-list td {
+    padding-bottom: 20px; }
+    .country-list td span {
+      font-weight: bold;
+      display: block;
+      padding: 20px;
+      background: #e8edeb;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+  .country-list tbody tr:hover {
+    cursor: pointer; }
+    .country-list tbody tr:hover span {
+      background: #d42836;
+      color: white; }
+  .country-list td:first-child span {
+    padding-right: 0;
+    color: #d42836; }
 
 .share-links {
   text-align: right;

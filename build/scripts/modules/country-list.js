@@ -18,6 +18,7 @@ define(['jquery', 'startswith', 'numberformatter', 'sortElements'], function($) 
 			  url: listDataURL,
 			  dataType: 'json',
 			  success: function (data) {
+					$el.removeClass('is-loading');
 			  	displayCountryList($el, data)
 			  },
 				error: function(data) {
