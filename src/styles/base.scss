@@ -1,4 +1,4 @@
-$primary-color: #d42863;
+$primary-color: #d42836;
 $grey: #666666;
 $text-color: $grey;
 $light-text-color: #afb1b1;
@@ -21,6 +21,8 @@ body {
 	font-size: $default-font-size;
 	line-height: $default-line-height;
 	color: $text-color;
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 h1 {

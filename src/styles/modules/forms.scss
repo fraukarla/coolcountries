@@ -15,6 +15,7 @@ textarea {
 	font-size: $default-font-size;
 	color: $text-color;
     padding: 10px 15px;
+	-webkit-appearance: none;
 }
 
 :-webkit-input-placeholder, /* Chrome/Opera/Safari */
@@ -42,6 +43,8 @@ button {
     min-width: 150px;
     display: block;
     margin: 0 auto;
+	-webkit-appearance: none;
+	border-radius: none;
 
 	&:focus,
 	&:hover {

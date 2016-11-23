@@ -1,16 +1,32 @@
 .page-options {
 	margin-bottom: $gutter;
-	
+
 	.back-link {
 		@include icon('arrow-left');
 
 		float: left;
+
+		&:before {
+		    font-size: 1.5em;
+		    position: relative;
+		    top: -0.05em;
+		    line-height: 1;
+		    float: left;
+		}
 	}
 
 	.report-link {
 		@include icon('error');
 
 		float: right;
+
+		&:before {
+		    margin-right: 0.5em;
+		    position: relative;
+		    top: 0.18em;
+		    line-height: 1;
+		    float: left;
+		}
 	}
 
 	&:after {
